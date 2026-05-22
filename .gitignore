@@ -1,0 +1,14 @@
+.cpcache/
+
+.clj-kondo/
+
+.lsp/
+
+.DS_Store
+
+*.iml
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

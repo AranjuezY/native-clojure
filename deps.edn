@@ -1,0 +1,12 @@
+{:paths ["src"]
+
+ :deps {org.clojure/clojure {:mvn/version "1.12.2"}
+        metosin/malli {:mvn/version "0.20.1"}
+        cljfx/cljfx {:mvn/version "1.10.7"}}
+
+ :aliases
+ {:dev {:extra-paths ["dev"]
+        :extra-deps {io.github.cljfx/dev {:mvn/version "1.10.6.42"}
+                     org.clojure/tools.namespace {:mvn/version "1.5.1"}}}
+
+  :run {:main-opts ["-m" "myapp.app"]}}}

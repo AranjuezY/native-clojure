@@ -1,0 +1,25 @@
+{:paths ["src" "dev"]
+
+ :deps {metosin/malli {:mvn/version "0.20.1"}}
+
+ :tasks
+ {validate:spec
+  {:doc "Run spec validator in a fresh JVM Clojure process"
+   :task (shell "clj" "-M:dev" "-e"
+                "(do
+                   (require 'validators.spec-validator)
+                   (validators.spec-validator/validate-spec-files))")}
+
+  validate:logic
+  {:doc "Run logic validator in a fresh JVM Clojure process"
+   :task (shell "clj" "-M:dev" "-e"
+                "(do
+                   (require 'validators.logic-validator)
+                   (validators.logic-validator/validate-logic-files))")}
+
+  validate:component
+  {:doc "Run component validator in a fresh JVM Clojure process"
+   :task (shell "clj" "-M:dev" "-e"
+                "(do
+                   (require 'validators.component-validator)
+                   (validators.component-validator/validate-component-files))")}}}
