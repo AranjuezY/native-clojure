@@ -4,7 +4,8 @@
             [myapp.ui.root :as ui.root])
   (:gen-class))
 
-(defn initial-state [])
+(defn initial-state []
+  {:text ""})
 
 (defonce *state
   (atom (initial-state)))
@@ -14,13 +15,14 @@
 
 (def renderer
   (fx/create-renderer
-    :middleware
-    (fx/wrap-map-desc
-      (fn [state]
-        (ui.root/view
-          (assoc state
-                 :on-update-text
-                 #(event-handler {})))))))
+   :middleware
+   (fx/wrap-map-desc
+    (fn [state]
+      (ui.root/view
+       (assoc state
+              :on-update-text
+              #(event-handler {:event/type :update-text
+                               :value %})))))))
 
 (defn -main [& _args]
   (fx/mount-renderer *state renderer))

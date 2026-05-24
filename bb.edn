@@ -15,11 +15,11 @@
    :task (shell "clj" "-M:dev" "-e"
                 "(do
                    (require 'validators.logic-validator)
-                   (validators.logic-validator/validate-logic-files))")}
+                   (validators.logic-validator/validate-event-logic))")}
 
   validate:component
   {:doc "Run component validator in a fresh JVM Clojure process"
    :task (shell "clj" "-M:dev" "-e"
                 "(do
                    (require 'validators.component-validator)
-                   (validators.component-validator/validate-component-files))")}}}
+                   (validators.component-validator/validate-components))")}}}

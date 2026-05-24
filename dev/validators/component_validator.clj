@@ -1,12 +1,12 @@
-(ns dev.validators.component-validator
+(ns validators.component-validator
   (:require [clojure.java.io :as io]
             [clojure.string :as str]
             [clojure.tools.namespace.find :as ns-find]
             [clojure.walk :as walk]
             [malli.generator :as mg]))
 
-(def components-root-ns "myapp.components")
-(def excluded-component-ns #{'myapp.components.root})
+(def components-root-ns "myapp.ui")
+(def excluded-component-ns #{'myapp.ui.root})
 (def required-map-keys #{:fx/type})
 
 (defn component-namespace? [ns-sym]
